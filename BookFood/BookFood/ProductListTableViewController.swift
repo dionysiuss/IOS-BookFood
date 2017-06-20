@@ -42,7 +42,6 @@ class ProductListTableViewController: UITableViewController {
         
         let initialLocation = CLLocation(latitude: Double(self.positionX!)!, longitude: Double(self.positionY!)!)
         let regionRadius: CLLocationDistance = 1000
-        loadProducts(true)
         centerMapOnLocation(location: initialLocation,regionRadius: regionRadius)
         let mapData = RestaurantMapData(title: self.brandName!,
                                         locationName: self.des!,

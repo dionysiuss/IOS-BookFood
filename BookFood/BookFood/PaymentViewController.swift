@@ -296,21 +296,24 @@ class PaymentViewController: UITableViewController, TextEntryTableViewCellDelega
             }
             
             self.ref.child("order").child(orderID).child("timeToWait").setValue(timeToWait)
-
             var cartforreal: Dictionary<String, Any> = [:]
             for var food in (cartProducts?.allKeys)!{
                 let obj: NSDictionary = cartProducts?.value(forKey: food as! String) as! NSDictionary
+                print(obj)
+                var productPrice:String = String(describing: (obj["price"] as! Int))
+
+                var productQuantity:String = String(describing: (obj["quantity"] as! Int))
                 var propertyOfFood: Dictionary<String, Any> = ["Brand": (obj["brand"] as! NSDictionary)["value"],
-                                                           "ProductPrice": obj["sale_price"],
+                                                           "ProductMoney": productPrice,
                                                            "ProductName": obj["title"],
-                                                           "ProductNumber" :obj["quantity"]]
+                                                           "ProductNumber" :productQuantity]
 
                 cartforreal.updateValue(propertyOfFood, forKey: food as! String)
                 
                 //let obj: NSDictionary = cartProducts?.value(forKey: food as! String) as! NSDictionary
                 
             }
-            self.ref.child("order").child(orderID).child("item").setValue(cartforreal)
+            self.ref.child("order").child(orderID).child("items").setValue(cartforreal)
             
         }, failure: { (response, error) -> Void in
             //SwiftSpinner.hide()
