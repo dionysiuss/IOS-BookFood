@@ -21,8 +21,8 @@ class AddressEntryTableViewController: UITableViewController, TextEntryTableView
     
     // Field identifier key constants
     fileprivate let contactEmailFieldIdentifier = "email"
-    fileprivate let contactFirstNameFieldIdentifier = "first_name"
-    fileprivate let contactLastNameFieldIdentifier = "last_name"
+    fileprivate let contactFirstNameFieldIdentifier = "username"
+    fileprivate let contactLastNameFieldIdentifier = "userphone"
     
     fileprivate let PAYMENT_SEGUE = "Payment"
     

@@ -18,6 +18,7 @@ class ProductDetailViewController: UIViewController {
     @IBOutlet weak var descriptionTextView:UITextView?
     @IBOutlet weak var productImageView:UIImageView?
     @IBOutlet weak var buyButton:UIButton?
+    @IBOutlet weak var timeToWait:UILabel?
     
 
     override func viewDidLoad() {
@@ -32,6 +33,8 @@ class ProductDetailViewController: UIViewController {
             self.descriptionTextView?.text = description
             
         }
+        var timeString:String = String(describing: (productDict?.value(forKey: "time_to_wait")!as! Int) )
+        timeToWait?.text = timeString
         
         if let price = productDict!.value(forKeyPath: "price.data.formatted.with_tax") as? String {
             let buyButtonTitle = String(format: "Buy Now (%@)", price)

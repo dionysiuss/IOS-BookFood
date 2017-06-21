@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BEw-PU-7YM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="KBX-JT-42V">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -142,7 +142,7 @@
                         <outlet property="Name" destination="0f4-c2-3vz" id="uiG-N5-w00"/>
                         <outlet property="TapReastaurant" destination="KT2-0X-mGB" id="iEz-2H-c3y"/>
                         <outlet property="mytable" destination="4JM-aY-Dr6" id="4AN-4Q-fqH"/>
-                        <segue destination="STd-G0-UBz" kind="show" id="uzQ-hI-9dU"/>
+                        <segue destination="STd-G0-UBz" kind="show" id="puN-qq-FfC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -357,7 +357,6 @@
                     <connections>
                         <outlet property="email" destination="8lj-7i-IJ7" id="IYQ-5C-tbb"/>
                         <outlet property="password" destination="aCf-mg-OjX" id="CUj-cX-vyy"/>
-                        <segue destination="BYZ-38-t0r" kind="show" id="v0u-bj-6Dm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rsT-60-SLy" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -556,7 +555,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="£249.99" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hu2-Tg-G9d">
-                                            <rect key="frame" x="267" y="8" width="100" height="44"/>
+                                            <rect key="frame" x="246" y="8" width="121" height="44"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="58" id="Vn5-Bi-Ryp"/>
                                             </constraints>
@@ -613,7 +612,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cTc-Xq-u7a">
-                                <rect key="frame" x="0.0" y="64" width="375" height="200"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="2mu-oI-ALS"/>
                                 </constraints>
@@ -1093,7 +1092,7 @@
                                     <outlet property="showOrders" destination="sBY-aF-H6L" id="POM-BM-mie"/>
                                     <outlet property="showUsePhone" destination="Pio-H0-Q3V" id="Kyr-xf-Fvy"/>
                                     <outlet property="showUserName" destination="213-bN-MyA" id="xpV-ph-P2C"/>
-                                    <segue destination="qyt-bX-9oJ" kind="show" identifier="SegueOrderID" id="QTW-NJ-iqr"/>
+                                    <segue destination="qyt-bX-9oJ" kind="show" identifier="SegueOrderID" id="Bbg-0o-4KD"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -1104,7 +1103,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="OrderList" id="S2i-fp-8NO"/>
                     <connections>
-                        <segue destination="qyt-bX-9oJ" kind="show" id="j4F-s0-JBs"/>
+                        <segue destination="qyt-bX-9oJ" kind="show" id="5ZI-5c-2Im"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ed9-dv-0DU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1156,10 +1155,10 @@
             </objects>
             <point key="canvasLocation" x="956" y="1949"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Nav Controller-->
         <scene sceneID="Ra6-Am-lKz">
             <objects>
-                <navigationController id="2ck-EE-Lz2" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="NavBackend" id="2ck-EE-Lz2" customClass="NavController" customModule="BookFood" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="2iF-tf-QnE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1175,7 +1174,7 @@
         <!--Items-->
         <scene sceneID="X8T-Vw-Yjn">
             <objects>
-                <tableViewController id="qyt-bX-9oJ" customClass="ItemsTableViewController" customModule="BookFood" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="ItemList" id="qyt-bX-9oJ" customClass="ItemsTableViewController" customModule="BookFood" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="63" sectionHeaderHeight="28" sectionFooterHeight="28" id="VtA-Sp-nnu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1223,7 +1222,18 @@
                             <outlet property="delegate" destination="qyt-bX-9oJ" id="IQr-es-Iih"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Items" id="lZ4-4D-YiB"/>
+                    <navigationItem key="navigationItem" title="Items" id="lZ4-4D-YiB">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="E4a-mt-hXE">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="J9N-Uc-S4f">
+                                <rect key="frame" x="276" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="已完成"/>
+                                <connections>
+                                    <action selector="Check:" destination="qyt-bX-9oJ" eventType="touchUpInside" id="cE8-2Q-VFd"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uWZ-Ch-QNv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1319,8 +1329,8 @@
         <image name="訂購框" width="85" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="3zA-uf-sEI"/>
+        <segue reference="Bbg-0o-4KD"/>
+        <segue reference="LrH-Xs-j4m"/>
         <segue reference="JOb-vc-2ti"/>
-        <segue reference="QTW-NJ-iqr"/>
     </inferredMetricsTieBreakers>
 </document>

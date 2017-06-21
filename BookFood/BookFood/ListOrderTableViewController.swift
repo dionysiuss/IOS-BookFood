@@ -29,8 +29,7 @@ class ListOrderTableViewController: UITableViewController {
             let key = snapshot.key as String
             self.ref.child(key).child("items").observe(.childAdded, with: { (snapshot) in
                 let data = snapshot.value as? [String: AnyObject]
-                print(data?["Brand"])
-                if (data?["Brand"]?.isEqual(self.brandName))!{
+                if (data?["Brand"]?.isEqual("假面騎士"))!{
                     self.orders.append(key)
                 }
 
@@ -105,6 +104,10 @@ class ListOrderTableViewController: UITableViewController {
                 let indexPath = self.tableView.indexPath(for: sender as! UITableViewCell)
                 let postdata = orders[(indexPath?.row)!]
                 destination.gatOrderId = postdata
+                let Item = self.storyboard?.instantiateViewController(withIdentifier: "ItemList") as! ItemsTableViewController
+                let navBackend = UINavigationController(rootViewController: Item)
+                self.present(navBackend, animated: true, completion: nil)
+
                 
             }
             

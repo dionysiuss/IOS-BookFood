@@ -51,13 +51,14 @@ class member: UIViewController {
                         //Go to the HomeViewController if the login is sucessful
                         let vc = self.storyboard?.instantiateViewController(withIdentifier: "Home") as! ViewController
                         let backend = self.storyboard?.instantiateViewController(withIdentifier: "Backend") as! BackendViewController
+                        let navBackend = UINavigationController(rootViewController: backend)
                         vc.userEmail = self.email.text!
                         let charIndex = self.email.text!.indexDistance(of: "@")!+1
                         let index = self.email.text!.index(vc.userName.startIndex, offsetBy: charIndex)
                         vc.userName = self.email.text!.substring(to: index)
                         backend.brandName = self.brandName
                         if(self.admin==1){
-                            self.present(backend, animated: true, completion: nil)
+                            self.present(navBackend, animated: true, completion: nil)
                         }
                         else{
                             self.present(vc, animated: true, completion: nil)

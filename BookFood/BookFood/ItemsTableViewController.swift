@@ -22,44 +22,50 @@ class ItemsTableViewController: UITableViewController {
         
     }
     
-    @IBAction func Reject(_ sender: Any) {
-        ref = Database.database().reference().child("order")
-        self.ref.child("order").child(gatOrderId).child("orderStatus").setValue("無法接單")
-    }
-    
-    @IBAction func Done(_ sender: Any) {
-    ref = Database.database().reference().child("order")
-        self.ref.child(gatOrderId).child("orderStatus").setValue("Done")
-    }
     
     override func viewDidLoad() {
-       
+        
         super.viewDidLoad()
-       
-        print(gatOrderId)
-        //self.tableView.register(OrderTableViewCell.self, forCellReuseIdentifier: "Itemcell")
+        
         ref = Database.database().reference().child("order")
-        ref.child(gatOrderId).child("items").observe(.childAdded, with: { (snapshot) in
-            let data = snapshot.value as? [String: AnyObject]
-           
-            if(data?["Brand"]?.isEqual("佐世保"))!{
-            if let valueDictionary = snapshot.value as? [AnyHashable:String]
-            {
-                let productName = valueDictionary["productName"]
-                let productNumber = valueDictionary["productNumber"]
-                let Band = valueDictionary["Band"]
-                let productMoney = valueDictionary["productMoney"]
-                self.posts.insert(eventStruct(productName: productName, productNumber: productNumber, Band: Band,productMoney: productMoney), at: 0)
-                print(self.posts)
- 
-                }
-                OperationQueue.main.addOperation({
-                    self.tableView.reloadData()
-                })
-                // }
-            }
+        //        let sufString = String(gatOrderId.characters.suffix(19))
+        //        print(sufString) //印出 "Body"
+        
+        ref.observe(.childAdded, with: { (snapshot) in
             
+            let key = snapshot.key as String
+            print(key)
+            if key.contains(self.gatOrderId){
+                self.ref.child(self.gatOrderId).child("items").observe(.childAdded, with: { (snapshot) in
+                    let data = snapshot.value as? [String: AnyObject]
+                    print(data)
+                    if data?["Brand"] == nil {
+                    }
+                    else if(data?["Brand"]?.isEqual("佐世保"))!{
+                        if let valueDictionary = snapshot.value as? [String:AnyObject]
+                        {
+                            let productName = valueDictionary["ProductName"]
+                            let productNumber = valueDictionary["ProductNumber"]
+                            let Band = valueDictionary["Brand"]
+                            let productMoney = valueDictionary["ProductMoney"]
+                            
+                            self.posts.insert(eventStruct(productName: productName as! String, productNumber: productNumber as! String, Band: Band as! String,productMoney: productMoney as! String), at: 0)
+                            print(self.posts)
+                        }
+                        OperationQueue.main.addOperation({
+                            self.tableView.reloadData()
+                        })
+                        
+                    }
+                    
+                })
+            }
         })
+    }
+    
+    @IBAction func Check(_ sender: UIButton) {
+        self.ref.child(gatOrderId).child("orderStatus").setValue("Done")
+        print("done")
     }
     
     override func didReceiveMemoryWarning() {
@@ -81,11 +87,10 @@ class ItemsTableViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-         let cell = tableView.dequeueReusableCell(withIdentifier: "Itemcell", for: indexPath) as! OrderTableViewCell
-    
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Itemcell", for: indexPath) as! OrderTableViewCell
         
-  
-
+        
+        
         cell.showProductName?.text = posts[indexPath.row].productName!
         cell.showProductMoney?.text = posts[indexPath.row].productMoney!
         cell.showProductNumber?.text = posts[indexPath.row].productNumber!

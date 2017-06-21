@@ -13,8 +13,13 @@ class BackendViewController: UIViewController{
     var brandName: String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
-        let ListOrder = self.storyboard?.instantiateViewController(withIdentifier: "ListOrder") as! ListOrderTableViewController
+
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let ListOrder = segue.destination as! ListOrderTableViewController
         ListOrder.brandName = self.brandName
+        let navBackend = NavController(rootViewController: ListOrder)
+        self.present(navBackend, animated: true, completion: nil)
     }
     
 }

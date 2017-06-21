@@ -37,10 +37,10 @@ class UserOrderListTableViewController: UITableViewController {
         ref.child(orderIdName).child("items").observe(.childAdded, with: { (snapshot) in
             if let valueDictionary = snapshot.value as? [AnyHashable:String]
             {
-                let productName = valueDictionary["productName"]
-                let productNumber = valueDictionary["productNumber"]
+                let productName = valueDictionary["ProductName"]
+                let productNumber = valueDictionary["ProductNumber"]
                 let Brand = valueDictionary["Brand"]
-                let productMoney = valueDictionary["productMoney"]
+                let productMoney = valueDictionary["ProductMoney"]
                 self.posts.insert(eventStruct(productName: productName, productNumber: productNumber, Brand: Brand,productMoney: productMoney), at: 0)
                 print(self.posts)
                 

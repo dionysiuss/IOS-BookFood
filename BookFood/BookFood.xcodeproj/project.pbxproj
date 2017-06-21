@@ -51,10 +51,11 @@
 		48F7A10A1EE967D800F65BFE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 48F7A1091EE967D800F65BFE /* GoogleService-Info.plist */; };
 		48F7A10E1EE9800C00F65BFE /* RestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F7A10D1EE9800C00F65BFE /* RestaurantViewController.swift */; };
 		48F7A1101EE9808F00F65BFE /* RestaurantCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F7A10F1EE9808F00F65BFE /* RestaurantCollectionViewCell.swift */; };
+		95BD97891EF9E1B3007895FF /* BackendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BD97881EF9E1B3007895FF /* BackendViewController.swift */; };
+		95BD978B1EF9E79A007895FF /* NavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BD978A1EF9E79A007895FF /* NavController.swift */; };
 		99860708CF8D153369BE7E41 /* Pods_BookFood.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9A44B285CC5962275BF17F9 /* Pods_BookFood.framework */; };
 		D0EE226523FBFEBAB7B7C70D /* Pods_BookFoodUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0898E91C533E93E1C31C4176 /* Pods_BookFoodUITests.framework */; };
 		F719BA9E1EF0052300DEFCBE /* MemberData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F719BA9D1EF0052300DEFCBE /* MemberData.swift */; };
-		F719BAA81EF9A14200DEFCBE /* BackendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F719BAA71EF9A14200DEFCBE /* BackendViewController.swift */; };
 		F7327F081EEC5CFA0027ABA7 /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7327F071EEC5CFA0027ABA7 /* Register.swift */; };
 /* End PBXBuildFile section */
 
@@ -132,10 +133,11 @@
 		48F7A10F1EE9808F00F65BFE /* RestaurantCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantCollectionViewCell.swift; sourceTree = "<group>"; };
 		56A5B5B2FDB401C75CAF1F59 /* Pods_BookFoodTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BookFoodTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		75EFA9276E2AC8D3111647C4 /* Pods-BookFoodUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookFoodUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BookFoodUITests/Pods-BookFoodUITests.release.xcconfig"; sourceTree = "<group>"; };
+		95BD97881EF9E1B3007895FF /* BackendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackendViewController.swift; sourceTree = "<group>"; };
+		95BD978A1EF9E79A007895FF /* NavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavController.swift; sourceTree = "<group>"; };
 		B9A44B285CC5962275BF17F9 /* Pods_BookFood.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BookFood.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E60FA9940EDDC41F37861BE0 /* Pods-BookFood.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookFood.release.xcconfig"; path = "Pods/Target Support Files/Pods-BookFood/Pods-BookFood.release.xcconfig"; sourceTree = "<group>"; };
 		F719BA9D1EF0052300DEFCBE /* MemberData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberData.swift; sourceTree = "<group>"; };
-		F719BAA71EF9A14200DEFCBE /* BackendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BackendViewController.swift; path = ../../../test/BookFood/BookFood/BackendViewController.swift; sourceTree = "<group>"; };
 		F7327F071EEC5CFA0027ABA7 /* Register.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
 		F946FD2B940B6852F9B8F503 /* Pods-BookFoodTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookFoodTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BookFoodTests/Pods-BookFoodTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -213,9 +215,9 @@
 				48B490CA1EB8E7AE00C8C7DE /* BookFood.xcdatamodeld */,
 				48F7A1091EE967D800F65BFE /* GoogleService-Info.plist */,
 				04D584EF1EF9605000D0DA61 /* RestaurantMapData.swift */,
-				F719BAA71EF9A14200DEFCBE /* BackendViewController.swift */,
 				04D584F01EF9605000D0DA61 /* VCMapView.swift */,
 				48B490F41EB8E7DE00C8C7DE /* FoodMap.swift */,
+				95BD97881EF9E1B3007895FF /* BackendViewController.swift */,
 				48B490F61EB8EAAF00C8C7DE /* RestaurantList.swift */,
 				48B490F81EB8EBE700C8C7DE /* member.swift */,
 				48803DFA1EB9A8FA00EDA617 /* RestaurantInformation.swift */,
@@ -249,6 +251,7 @@
 				48E9580C1EF7BA8D00A18D7B /* OrderTableViewCell.swift */,
 				485B52081EF97B8100E4C751 /* UserOrderListTableViewCell.swift */,
 				485B520A1EF97C5500E4C751 /* UserTableViewCell.swift */,
+				95BD978A1EF9E79A007895FF /* NavController.swift */,
 			);
 			path = BookFood;
 			sourceTree = "<group>";
@@ -582,6 +585,7 @@
 				485B520B1EF97C5500E4C751 /* UserTableViewCell.swift in Sources */,
 				042543D31EF11FBE000943BE /* AddressEntryTableViewController.swift in Sources */,
 				04D584F21EF9605000D0DA61 /* VCMapView.swift in Sources */,
+				95BD978B1EF9E79A007895FF /* NavController.swift in Sources */,
 				042543D41EF11FBE000943BE /* PaymentViewController.swift in Sources */,
 				042543DB1EF11FBE000943BE /* AlertDialog.swift in Sources */,
 				F7327F081EEC5CFA0027ABA7 /* Register.swift in Sources */,
@@ -592,7 +596,6 @@
 				48B490CC1EB8E7AE00C8C7DE /* BookFood.xcdatamodeld in Sources */,
 				042543DC1EF11FBE000943BE /* String+Numeric.swift in Sources */,
 				042543D11EF11FBE000943BE /* ProductDetailViewController.swift in Sources */,
-				F719BAA81EF9A14200DEFCBE /* BackendViewController.swift in Sources */,
 				042543D71EF11FBE000943BE /* CartTableViewCell.swift in Sources */,
 				48803E011EB9AC1400EDA617 /* SuccessOrder.swift in Sources */,
 				042543D81EF11FBE000943BE /* TextEntryTableViewCell.swift in Sources */,
@@ -604,6 +607,7 @@
 				042543D91EF11FBE000943BE /* ContinueButtonTableViewCell.swift in Sources */,
 				48B490C41EB8E7AE00C8C7DE /* AppDelegate.swift in Sources */,
 				042543D21EF11FBE000943BE /* CartViewController.swift in Sources */,
+				95BD97891EF9E1B3007895FF /* BackendViewController.swift in Sources */,
 				485B52091EF97B8100E4C751 /* UserOrderListTableViewCell.swift in Sources */,
 				48B490F91EB8EBE700C8C7DE /* member.swift in Sources */,
 			);
