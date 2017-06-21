@@ -13,7 +13,6 @@ class BackendViewController: UIViewController{
     var brandName: String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let ListOrder = segue.destination as! ListOrderTableViewController
